@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Denada Design System */
+    --background: 37 33% 96%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 155 38% 17%;
+    --primary-foreground: 37 33% 96%;
+    --secondary: 37 20% 92%;
+    --secondary-foreground: 155 38% 17%;
+    --muted: 37 15% 93%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 42 49% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 37 15% 88%;
+    --input: 37 15% 88%;
+    --ring: 155 38% 17%;
+    --radius: 0.625rem;
+    --chart-1: 155 38% 17%;
+    --chart-2: 42 49% 54%;
+    --chart-3: 145 50% 40%;
+    --chart-4: 37 33% 70%;
+    --chart-5: 0 0% 30%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-surface text-foreground font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
