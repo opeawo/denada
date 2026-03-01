@@ -11,6 +11,8 @@ import {
   TrendingUp,
   MessageSquare,
   Settings,
+  LogOut,
+  User,
 } from "lucide-react";
 
 const sidebarLinks = [
@@ -37,25 +39,48 @@ export default function DashboardLayout({
         <div className="flex gap-8">
           {/* Sidebar */}
           <aside className="hidden w-64 shrink-0 lg:block">
-            <nav className="sticky top-24 space-y-1">
-              {sidebarLinks.map((link) => {
-                const isActive = pathname === link.href;
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
-                      isActive
-                        ? "bg-deep-green-500 text-white"
-                        : "text-muted-foreground hover:bg-gray-100 hover:text-foreground"
-                    }`}
-                  >
-                    <link.icon className="h-4 w-4" />
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </nav>
+            <div className="sticky top-24 flex flex-col" style={{ maxHeight: "calc(100vh - 8rem)" }}>
+              <nav className="flex-1 space-y-1 overflow-y-auto">
+                {sidebarLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                        isActive
+                          ? "bg-deep-green-500 text-white"
+                          : "text-muted-foreground hover:bg-gray-100 hover:text-foreground"
+                      }`}
+                    >
+                      <link.icon className="h-4 w-4" />
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </nav>
+
+              {/* Profile & Logout */}
+              <div className="mt-6 border-t border-gray-200 pt-4">
+                <div className="flex items-center gap-3 px-4 py-2">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-deep-green-50 text-deep-green-500">
+                    <User className="h-4 w-4" />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-medium text-foreground">
+                      Adeola Johnson
+                    </p>
+                    <p className="truncate text-xs text-muted-foreground">
+                      adeola@email.com
+                    </p>
+                  </div>
+                </div>
+                <button className="mt-1 flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-red-50 hover:text-red-600">
+                  <LogOut className="h-4 w-4" />
+                  Log out
+                </button>
+              </div>
+            </div>
           </aside>
 
           {/* Main content */}

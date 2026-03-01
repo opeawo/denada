@@ -20,7 +20,7 @@ import { properties, getPropertyBySlug } from "@/data/properties";
 import { PropertyGallery } from "@/components/properties/property-gallery";
 import { PurchasePanel } from "@/components/properties/purchase-panel";
 import { PropertyCard } from "@/components/shared/property-card";
-import { getWhatsAppLink } from "@/lib/format";
+import { getWhatsAppLink, slugify } from "@/lib/format";
 
 interface Props {
   params: { slug: string };
@@ -118,10 +118,13 @@ export default function PropertyDetailPage({ params }: Props) {
                   Built {property.yearBuilt}
                 </span>
               )}
-              <span className="flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5">
+              <Link
+                href={`/developers/${slugify(property.developer.name)}`}
+                className="flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1.5 transition-colors hover:bg-deep-green-50 hover:text-deep-green-500"
+              >
                 <Building2 className="h-4 w-4 text-muted-foreground" />
                 {property.developer.name}
-              </span>
+              </Link>
             </div>
 
             {/* Description */}

@@ -6,7 +6,7 @@ import { Heart, Bed, Bath, Maximize, MessageCircle } from "lucide-react";
 import { Property } from "@/types/property";
 import { PriceDisplay } from "./price-display";
 import { Badge } from "@/components/ui/badge";
-import { getWhatsAppLink } from "@/lib/format";
+import { getWhatsAppLink, slugify } from "@/lib/format";
 
 interface PropertyCardProps {
   property: Property;
@@ -82,7 +82,14 @@ export function PropertyCard({ property, compact = false }: PropertyCardProps) {
 
         {/* Developer */}
         <p className="mt-0.5 text-xs text-muted-foreground">
-          by {property.developer.name}
+          by{" "}
+          <Link
+            href={`/developers/${slugify(property.developer.name)}`}
+            className="hover:text-deep-green-500 hover:underline"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {property.developer.name}
+          </Link>
         </p>
 
         {/* Specs */}

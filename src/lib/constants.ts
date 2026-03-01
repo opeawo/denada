@@ -27,6 +27,7 @@ export const CURRENCY_LOCALES = {
 
 export const NAV_LINKS = [
   { label: "Browse Properties", href: "/properties" },
+  { label: "Developers", href: "/developers" },
   { label: "Pay Small Small", href: "/pay-small-small" },
   { label: "Fractionalize", href: "/fractionalize" },
   { label: "Sell My Property", href: "/sell" },
