@@ -7,8 +7,6 @@ import {
   Building2,
   CreditCard,
   PieChart,
-  FileText,
-  TrendingUp,
   MessageSquare,
   Settings,
   LogOut,
@@ -20,8 +18,6 @@ const sidebarLinks = [
   { label: "My Properties", href: "/dashboard/properties", icon: Building2 },
   { label: "Payment Tracker", href: "/dashboard/payments", icon: CreditCard },
   { label: "My Fractions", href: "/dashboard/fractions", icon: PieChart },
-  { label: "Documents", href: "/dashboard/documents", icon: FileText },
-  { label: "Valuations", href: "/dashboard/valuations", icon: TrendingUp },
   { label: "Messages", href: "/dashboard/messages", icon: MessageSquare },
   { label: "Settings", href: "/dashboard/settings", icon: Settings },
 ];

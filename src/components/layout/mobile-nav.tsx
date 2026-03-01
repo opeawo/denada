@@ -2,8 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, MessageCircle } from "lucide-react";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import { X, MessageCircle, ShieldCheck } from "lucide-react";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { NAV_LINKS, WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/constants";
 import { CurrencyToggle } from "@/components/shared/currency-toggle";
 import { Logo } from "@/components/shared/logo";
@@ -11,14 +12,18 @@ import { Logo } from "@/components/shared/logo";
 interface MobileNavProps {
   open: boolean;
   onClose: () => void;
+  onVerifyAgent?: () => void;
 }
 
-export function MobileNav({ open, onClose }: MobileNavProps) {
+export function MobileNav({ open, onClose, onVerifyAgent }: MobileNavProps) {
   const pathname = usePathname();
 
   return (
     <Sheet open={open} onOpenChange={onClose}>
       <SheetContent side="right" className="w-80 bg-deep-green-500 p-0 border-none">
+        <VisuallyHidden>
+          <SheetTitle>Navigation Menu</SheetTitle>
+        </VisuallyHidden>
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
@@ -65,13 +70,16 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
 
           {/* Bottom CTA */}
           <div className="border-t border-white/10 px-6 py-4 space-y-3">
-            <Link
-              href="/properties"
-              onClick={onClose}
-              className="block w-full rounded-lg bg-gold py-3 text-center text-sm font-semibold text-deep-green-500 hover:bg-gold-400"
+            <button
+              onClick={() => {
+                onClose();
+                onVerifyAgent?.();
+              }}
+              className="flex w-full items-center justify-center gap-2 rounded-lg border border-white/20 py-3 text-sm font-semibold text-white hover:bg-white/10"
             >
-              Get Started
-            </Link>
+              <ShieldCheck className="h-4 w-4" />
+              Verify Agent
+            </button>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
               target="_blank"
