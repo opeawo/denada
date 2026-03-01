@@ -3,8 +3,12 @@ import {
   TrendingUp,
   CreditCard,
   Wallet,
+  FileText,
+  AlertCircle,
+  Clock,
+  ChevronRight,
 } from "lucide-react";
-import { Progress } from "@/components/ui/progress";
+import Link from "next/link";
 
 const stats = [
   {
@@ -33,32 +37,65 @@ const stats = [
   },
 ];
 
-const myProperties = [
+const pendingTasks = [
   {
-    name: "Victoria Island Luxury Flat",
-    location: "Victoria Island, Lagos",
-    purchasePrice: "\u20A6180,000,000",
-    currentValue: "\u20A6208,800,000",
-    gainPercent: 16,
-    paymentProgress: 14.7,
-    paidAmount: "\u20A626,400,000",
-    totalAmount: "\u20A6180,000,000",
-    nextPayment: "Mar 1, 2025",
-    type: "Pay Small Small",
+    id: "t1",
+    type: "payment" as const,
+    priority: "high" as const,
+    title: "Installment payment due",
+    description: "Victoria Island Luxury Flat — \u20A66,000,000 due Mar 1, 2025",
+    action: "Pay Now",
+    href: "/dashboard/payments",
   },
   {
-    name: "Ikoyi Waterfront Penthouse",
-    location: "Ikoyi, Lagos",
-    purchasePrice: "\u20A642,500,000",
-    currentValue: "\u20A650,150,000",
-    gainPercent: 18,
-    paymentProgress: 100,
-    paidAmount: "\u20A642,500,000",
-    totalAmount: "\u20A642,500,000",
-    nextPayment: null,
-    type: "Fractional (5%)",
+    id: "t2",
+    type: "document" as const,
+    priority: "high" as const,
+    title: "Upload proof of address",
+    description: "Required for Victoria Island Luxury Flat title processing",
+    action: "Upload",
+    href: "/dashboard/properties",
+  },
+  {
+    id: "t3",
+    type: "management" as const,
+    priority: "medium" as const,
+    title: "Sign updated tenancy agreement",
+    description: "Ikoyi Waterfront Penthouse — management requests your signature",
+    action: "Review",
+    href: "/dashboard/properties",
+  },
+  {
+    id: "t4",
+    type: "document" as const,
+    priority: "medium" as const,
+    title: "Verify identity document",
+    description: "Your NIN slip is pending verification — resubmit a clearer copy",
+    action: "Resubmit",
+    href: "/dashboard/settings",
+  },
+  {
+    id: "t5",
+    type: "management" as const,
+    priority: "low" as const,
+    title: "Annual property survey scheduled",
+    description: "Ikoyi Waterfront Penthouse — survey on Mar 15, 2025. Confirm attendance.",
+    action: "Confirm",
+    href: "/dashboard/messages",
   },
 ];
+
+const typeConfig = {
+  payment: { icon: CreditCard, color: "text-amber-600 bg-amber-50" },
+  document: { icon: FileText, color: "text-blue-600 bg-blue-50" },
+  management: { icon: AlertCircle, color: "text-purple-600 bg-purple-50" },
+};
+
+const priorityConfig = {
+  high: { label: "Urgent", className: "bg-red-50 text-red-700" },
+  medium: { label: "Action Needed", className: "bg-amber-50 text-amber-700" },
+  low: { label: "Info", className: "bg-gray-100 text-gray-600" },
+};
 
 export default function DashboardPage() {
   return (
@@ -93,75 +130,64 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* My Properties */}
+      {/* Pending Tasks */}
       <div className="mt-10">
-        <h2 className="font-heading text-xl font-bold">My Properties</h2>
-        <div className="mt-4 space-y-4">
-          {myProperties.map((prop) => (
-            <div
-              key={prop.name}
-              className="rounded-xl border border-gray-200 bg-white p-6"
-            >
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div>
-                  <div className="inline-block rounded-full bg-gold-50 px-2.5 py-0.5 text-xs font-medium text-gold-700">
-                    {prop.type}
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <h2 className="font-heading text-xl font-bold">Pending Tasks</h2>
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white">
+              {pendingTasks.filter((t) => t.priority === "high").length}
+            </span>
+          </div>
+          <span className="text-sm text-muted-foreground">
+            {pendingTasks.length} items need your attention
+          </span>
+        </div>
+
+        <div className="mt-4 space-y-3">
+          {pendingTasks.map((task) => {
+            const typeInfo = typeConfig[task.type];
+            const priorityInfo = priorityConfig[task.priority];
+            const TypeIcon = typeInfo.icon;
+
+            return (
+              <div
+                key={task.id}
+                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white p-4 transition-colors hover:bg-gray-50/50"
+              >
+                <div
+                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg ${typeInfo.color}`}
+                >
+                  <TypeIcon className="h-5 w-5" />
+                </div>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <p className="truncate text-sm font-semibold">
+                      {task.title}
+                    </p>
+                    <span
+                      className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium ${priorityInfo.className}`}
+                    >
+                      {priorityInfo.label}
+                    </span>
                   </div>
-                  <h3 className="mt-2 font-heading text-lg font-bold">
-                    {prop.name}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {prop.location}
+                  <p className="mt-0.5 flex items-center gap-1 truncate text-xs text-muted-foreground">
+                    <Clock className="h-3 w-3 shrink-0" />
+                    {task.description}
                   </p>
                 </div>
-                <div className="text-right">
-                  <p className="text-sm text-muted-foreground">Current Value</p>
-                  <p className="text-lg font-bold text-deep-green-500">
-                    {prop.currentValue}
-                  </p>
-                  <p className="text-xs text-green-600">
-                    +{prop.gainPercent}% from purchase
-                  </p>
-                </div>
-              </div>
 
-              {/* Payment progress */}
-              <div className="mt-4">
-                <div className="flex justify-between text-sm">
-                  <span className="text-muted-foreground">
-                    Paid: {prop.paidAmount} of {prop.totalAmount}
-                  </span>
-                  <span className="font-medium">
-                    {prop.paymentProgress.toFixed(1)}%
-                  </span>
-                </div>
-                <Progress value={prop.paymentProgress} className="mt-2 h-2" />
+                <Link
+                  href={task.href}
+                  className="flex shrink-0 items-center gap-1 rounded-lg bg-deep-green-500 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-deep-green-600"
+                >
+                  {task.action}
+                  <ChevronRight className="h-3 w-3" />
+                </Link>
               </div>
-
-              {prop.nextPayment && (
-                <div className="mt-3 flex items-center justify-between rounded-lg bg-amber-50 px-4 py-2">
-                  <span className="text-sm text-amber-800">
-                    Next payment: {prop.nextPayment}
-                  </span>
-                  <button className="text-sm font-semibold text-amber-800 hover:underline">
-                    Pay Now
-                  </button>
-                </div>
-              )}
-
-              <div className="mt-4 flex flex-wrap gap-2">
-                <button className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium hover:bg-gray-50">
-                  View Details
-                </button>
-                <button className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium hover:bg-gray-50">
-                  Request Valuation
-                </button>
-                <button className="rounded-lg border border-gray-200 px-3 py-1.5 text-xs font-medium hover:bg-gray-50">
-                  Download Title
-                </button>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

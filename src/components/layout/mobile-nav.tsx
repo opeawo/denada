@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { NAV_LINKS } from "@/lib/constants";
@@ -20,17 +20,14 @@ export function MobileNav({ open, onClose, onVerifyAgent }: MobileNavProps) {
 
   return (
     <Sheet open={open} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-80 bg-deep-green-500 p-0 border-none">
+      <SheetContent side="right" className="w-80 bg-deep-green-500 p-0 border-none text-white">
         <VisuallyHidden>
           <SheetTitle>Navigation Menu</SheetTitle>
         </VisuallyHidden>
         <div className="flex flex-col h-full">
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-white/10 px-6 py-4">
+          <div className="border-b border-white/10 px-6 py-4">
             <Logo size="md" href="" />
-            <button onClick={onClose} className="text-white/70 hover:text-white">
-              <X className="h-5 w-5" />
-            </button>
           </div>
 
           {/* Links */}
