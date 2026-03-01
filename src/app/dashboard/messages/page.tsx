@@ -1,4 +1,4 @@
-import { MessageSquare, Search, Send } from "lucide-react";
+import { Search, Send } from "lucide-react";
 
 const conversations = [
   {

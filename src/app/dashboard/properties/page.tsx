@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import {
-  Building2,
   MapPin,
   Bed,
   Bath,
