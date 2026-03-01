@@ -27,17 +27,17 @@ export const CURRENCY_LOCALES = {
 
 export const NAV_LINKS = [
   { label: "Browse Properties", href: "/properties" },
-  { label: "Developers", href: "/developers" },
   { label: "Pay Small Small", href: "/pay-small-small" },
   { label: "Fractionalize", href: "/fractionalize" },
-  { label: "Sell My Property", href: "/sell" },
-  { label: "For Agents", href: "/agents" },
+  { label: "Sell", href: "/sell" },
 ] as const;
 
 export const FOOTER_LINKS = {
   company: [
     { label: "About", href: "/about" },
     { label: "How It Works", href: "/#how-it-works" },
+    { label: "Developers", href: "/developers" },
+    { label: "For Agents", href: "/agents" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
   ],
@@ -45,7 +45,7 @@ export const FOOTER_LINKS = {
     { label: "Browse Properties", href: "/properties" },
     { label: "Pay Small Small", href: "/pay-small-small" },
     { label: "Fractionalize", href: "/fractionalize" },
-    { label: "Sell My Property", href: "/sell" },
+    { label: "Sell", href: "/sell" },
   ],
   support: [
     { label: "Contact Us", href: "/contact" },
@@ -56,6 +56,18 @@ export const FOOTER_LINKS = {
     { label: "Terms of Service", href: "/terms" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms & Conditions", href: "/conditions" },
+  ],
+  popular: [
+    { label: "New Properties in Ikoyi", href: "/properties?location=Ikoyi" },
+    { label: "New Properties in Victoria Island", href: "/properties?location=Victoria+Island" },
+    { label: "New Properties in Lekki", href: "/properties?location=Lekki+Phase+1" },
+    { label: "New Properties in Banana Island", href: "/properties?location=Banana+Island" },
+    { label: "New Properties in Ikeja", href: "/properties?location=Ikeja+GRA" },
+    { label: "New Properties in Abuja", href: "/properties?location=Maitama" },
+    { label: "New Properties in Eko Atlantic", href: "/properties?location=Eko+Atlantic" },
+    { label: "Apartments for Sale in Lagos", href: "/properties?type=apartment" },
+    { label: "Luxury Villas in Lagos", href: "/properties?type=villa" },
+    { label: "Land for Sale in Lagos", href: "/properties?type=land" },
   ],
 } as const;
 

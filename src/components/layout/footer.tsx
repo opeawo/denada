@@ -95,8 +95,26 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
+        {/* Popular Searches — SEO links */}
         <div className="mt-12 border-t border-white/10 pt-8">
+          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-gold">
+            Popular Searches
+          </h3>
+          <div className="flex flex-wrap gap-2">
+            {FOOTER_LINKS.popular.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/60 transition-colors hover:border-white/30 hover:text-white"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-8 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <Logo size="md" />
             <p className="text-sm text-white/50">

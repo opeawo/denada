@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, MessageCircle, ShieldCheck } from "lucide-react";
+import { X, ShieldCheck } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { NAV_LINKS, WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { CurrencyToggle } from "@/components/shared/currency-toggle";
 import { Logo } from "@/components/shared/logo";
 
@@ -69,7 +69,7 @@ export function MobileNav({ open, onClose, onVerifyAgent }: MobileNavProps) {
           </div>
 
           {/* Bottom CTA */}
-          <div className="border-t border-white/10 px-6 py-4 space-y-3">
+          <div className="border-t border-white/10 px-6 py-4">
             <button
               onClick={() => {
                 onClose();
@@ -80,15 +80,6 @@ export function MobileNav({ open, onClose, onVerifyAgent }: MobileNavProps) {
               <ShieldCheck className="h-4 w-4" />
               Verify Agent
             </button>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-whatsapp py-3 text-sm font-semibold text-white hover:bg-whatsapp-dark"
-            >
-              <MessageCircle className="h-4 w-4" />
-              Chat on WhatsApp
-            </a>
           </div>
         </div>
       </SheetContent>

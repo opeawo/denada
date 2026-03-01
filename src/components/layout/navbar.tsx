@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, MessageCircle, ShieldCheck } from "lucide-react";
+import { Menu, ShieldCheck } from "lucide-react";
 import { useScrollPosition } from "@/hooks/use-scroll-position";
-import { NAV_LINKS, WHATSAPP_NUMBER, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/constants";
+import { NAV_LINKS } from "@/lib/constants";
 import { CurrencyToggle } from "@/components/shared/currency-toggle";
 import { Logo } from "@/components/shared/logo";
 import { VerifyAgentDialog } from "@/components/shared/verify-agent-dialog";
@@ -63,15 +63,6 @@ export function Navbar() {
               <ShieldCheck className="h-4 w-4" />
               Verify Agent
             </button>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_DEFAULT_MESSAGE)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden items-center gap-1.5 rounded-lg bg-whatsapp px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-whatsapp-dark lg:flex"
-            >
-              <MessageCircle className="h-4 w-4" />
-              WhatsApp
-            </a>
 
             {/* Mobile hamburger */}
             <button
