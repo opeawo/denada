@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!developer) return { title: "Developer Not Found" };
   return {
     title: `${developer.name} — Properties`,
-    description: `Browse ${developer.propertyCount} properties by ${developer.name} on Denada.`,
+    description: `Browse ${developer.propertyCount} properties by ${developer.name} on Bonnafide.`,
   };
 }
 

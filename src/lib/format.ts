@@ -35,8 +35,8 @@ export function formatNumber(num: number): string {
 
 export function getWhatsAppLink(phone: string, propertyTitle?: string): string {
   const message = propertyTitle
-    ? `Hi, I'm interested in ${propertyTitle} on Denada. Can we talk?`
-    : "Hi Denada, I'd like to enquire about a property";
+    ? `Hi, I'm interested in ${propertyTitle} on Bonnafide. Can we talk?`
+    : "Hi Bonnafide, I'd like to enquire about a property";
   return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 

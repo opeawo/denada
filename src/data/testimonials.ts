@@ -14,7 +14,7 @@ export const testimonials: Testimonial[] = [
     name: "Adebayo Johnson",
     location: "Houston, Texas",
     quote:
-      "I've been wanting to invest in Nigerian real estate for years but couldn't trust anyone from abroad. Denada changed that completely. I bought a 10% fraction of an Ikoyi property without leaving Houston. The process was smooth, digital, and transparent.",
+      "I've been wanting to invest in Nigerian real estate for years but couldn't trust anyone from abroad. Bonnafide changed that completely. I bought a 10% fraction of an Ikoyi property without leaving Houston. The process was smooth, digital, and transparent.",
     rating: 5,
     role: "Diaspora Investor",
   },
@@ -32,7 +32,7 @@ export const testimonials: Testimonial[] = [
     name: "Emeka Okonkwo",
     location: "London, UK",
     quote:
-      "My family and I pooled together to buy a fraction of a Victoria Island apartment through Denada. The trust company partnership and digital documentation gave us the confidence we needed. Already seeing returns from rental income.",
+      "My family and I pooled together to buy a fraction of a Victoria Island apartment through Bonnafide. The trust company partnership and digital documentation gave us the confidence we needed. Already seeing returns from rental income.",
     rating: 5,
     role: "Family Investor",
   },

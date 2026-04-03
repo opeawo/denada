@@ -95,7 +95,7 @@ export default function SettingsPage() {
               },
               {
                 label: "Marketing emails",
-                desc: "Promotions, tips, and Denada news",
+                desc: "Promotions, tips, and Bonnafide news",
                 checked: false,
               },
             ].map((notif) => (

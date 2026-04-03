@@ -23,10 +23,10 @@ const conversations = [
   },
   {
     id: "3",
-    name: "Denada Support",
+    name: "Bonnafide Support",
     role: "Support Team",
     avatar: "DS",
-    lastMessage: "Welcome to Denada! Feel free to reach out if you need any assistance.",
+    lastMessage: "Welcome to Bonnafide! Feel free to reach out if you need any assistance.",
     timestamp: "3d ago",
     unread: false,
     property: null,
@@ -64,7 +64,7 @@ export default function MessagesPage() {
     <div>
       <h1 className="font-heading text-2xl font-bold md:text-3xl">Messages</h1>
       <p className="mt-1 text-muted-foreground">
-        Communicate with your agents and Denada support.
+        Communicate with your agents and Bonnafide support.
       </p>
 
       <div className="mt-6 overflow-hidden rounded-xl border border-gray-200 bg-white">

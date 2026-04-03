@@ -1,7 +1,7 @@
 import { HeroSection } from "@/components/home/hero-section";
 import { InvestmentModels } from "@/components/home/investment-models";
 import { FeaturedProperties } from "@/components/home/featured-properties";
-import { WhyDenada } from "@/components/home/why-denada";
+import { WhyBonnafide } from "@/components/home/why-bonnafide";
 import { ChairmanVideo } from "@/components/home/chairman-video";
 import { HowItWorks } from "@/components/home/how-it-works";
 import { Testimonials } from "@/components/home/testimonials";
@@ -14,7 +14,7 @@ export default function Home() {
       <TrustBar />
       <InvestmentModels />
       <FeaturedProperties />
-      <WhyDenada />
+      <WhyBonnafide />
       <ChairmanVideo />
       <HowItWorks />
       <Testimonials />

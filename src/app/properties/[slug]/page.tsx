@@ -201,7 +201,7 @@ export default function PropertyDetailPage({ params }: Props) {
                     Liquidity
                   </p>
                   <p className="text-sm font-medium text-foreground">
-                    Denada Sell-Side Service
+                    Bonnafide Sell-Side Service
                   </p>
                 </div>
               </div>

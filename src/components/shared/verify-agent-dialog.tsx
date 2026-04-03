@@ -66,7 +66,7 @@ export function VerifyAgentDialog({ open, onOpenChange }: VerifyAgentDialogProps
           <DialogDescription>
             Ensure your representative is an{" "}
             <span className="font-semibold text-deep-green-500">
-              Official Denada Agent
+              Official Bonnafide Agent
             </span>{" "}
             by checking their phone number below.
           </DialogDescription>
@@ -94,7 +94,7 @@ export function VerifyAgentDialog({ open, onOpenChange }: VerifyAgentDialogProps
           <p className="text-xs text-amber-800">
             Do not work with an agent that is not verified, even if they claim
             something is wrong with their original phone number. Only trust
-            verified Denada agents.
+            verified Bonnafide agents.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export function VerifyAgentDialog({ open, onOpenChange }: VerifyAgentDialogProps
                 Verified Agent
               </p>
               <p className="text-xs text-green-700">
-                This phone number belongs to an official Denada agent. You can
+                This phone number belongs to an official Bonnafide agent. You can
                 proceed with confidence.
               </p>
             </div>
@@ -122,7 +122,7 @@ export function VerifyAgentDialog({ open, onOpenChange }: VerifyAgentDialogProps
                 Not Verified
               </p>
               <p className="text-xs text-red-700">
-                This phone number is not registered as an official Denada agent.
+                This phone number is not registered as an official Bonnafide agent.
                 Do not share any personal or financial information.
               </p>
             </div>

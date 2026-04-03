@@ -1,11 +1,11 @@
-export const SITE_NAME = "Denada";
+export const SITE_NAME = "Bonnafide";
 export const SITE_TAGLINE = "The easiest way to invest in premium real estate in Nigeria.";
 export const SITE_DESCRIPTION =
   "Invest in Nigeria's premium real estate. Buy outright, pay in installments, or own fractions of luxury properties in Lagos & Abuja.";
 
 export const WHATSAPP_NUMBER = "2348000000000";
 export const WHATSAPP_DEFAULT_MESSAGE =
-  "Hi Denada, I'd like to enquire about a property";
+  "Hi Bonnafide, I'd like to enquire about a property";
 
 export const EXCHANGE_RATES = {
   NGN: 1,

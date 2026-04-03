@@ -247,7 +247,7 @@ export function PurchasePanel({ property }: PurchasePanelProps) {
         </div>
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <CheckCircle2 className="h-3.5 w-3.5 text-deep-green-500" />
-          Denada Certified Property
+          Bonnafide Certified Property
         </div>
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <FileCheck className="h-3.5 w-3.5 text-deep-green-500" />

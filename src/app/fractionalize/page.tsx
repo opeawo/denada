@@ -31,7 +31,7 @@ const steps = [
   {
     icon: ArrowLeftRight,
     title: "Exit Anytime",
-    description: "Sell your fraction via Denada sell-side service or our buyback program.",
+    description: "Sell your fraction via Bonnafide sell-side service or our buyback program.",
   },
 ];
 
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: "Who manages the property?",
-    a: "Denada handles all property management through our vetted partners. You receive rental income without any management hassle.",
+    a: "Bonnafide handles all property management through our vetted partners. You receive rental income without any management hassle.",
   },
   {
     q: "Can I buy more fractions over time?",

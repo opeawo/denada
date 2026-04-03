@@ -35,7 +35,7 @@ export function ChairmanVideo() {
                 <p className="text-base font-semibold text-gold">
                   Opeyemi Awoyemi
                 </p>
-                <p className="text-sm text-white/60">Chairman, Denada</p>
+                <p className="text-sm text-white/60">Chairman, Bonnafide</p>
               </footer>
             </blockquote>
 

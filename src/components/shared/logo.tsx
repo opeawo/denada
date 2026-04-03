@@ -39,9 +39,9 @@ export function Logo({ size = "lg", href = "/", className = "" }: LogoProps) {
     <span className={`flex items-center gap-1.5 ${className}`}>
       <FastForwardIcon className={s.icon} />
       <span className={`font-heading ${s.text} font-bold text-white`}>
-        Denada
+        Bonnafide
       </span>
-      <span className="h-2 w-2 rounded-full bg-gold" />
+
     </span>
   );
 

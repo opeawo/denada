@@ -118,7 +118,7 @@ export function Footer() {
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <Logo size="md" />
             <p className="text-sm text-white/50">
-              &copy; {new Date().getFullYear()} Denada. A Fast Forward Venture
+              &copy; {new Date().getFullYear()} Bonnafide. A Fast Forward Venture
               Studio Company.
             </p>
           </div>

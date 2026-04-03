@@ -31,7 +31,7 @@ const tiers = [
   },
   {
     icon: ShieldCheck,
-    title: "Denada Buyback Guarantee",
+    title: "Bonnafide Buyback Guarantee",
     description:
       "Last resort: we buy it back at 35% below current market value, renovate, and relist. You always have an exit.",
     step: "Step 3",
@@ -51,7 +51,7 @@ export default function SellPage() {
   });
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hi Denada, I'd like to list my property for sale."
+    "Hi Bonnafide, I'd like to list my property for sale."
   )}`;
 
   return (
@@ -65,7 +65,7 @@ export default function SellPage() {
               <span className="text-gold">We&apos;ll Sell It.</span>
             </h1>
             <p className="mt-4 text-lg text-white/80">
-              Denada manages the full sales process for properties originally
+              Bonnafide manages the full sales process for properties originally
               listed through us.
             </p>
           </div>
@@ -110,7 +110,7 @@ export default function SellPage() {
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <p className="text-sm font-medium text-gold-800">
             Sell-side service is available for properties originally purchased
-            through Denada.
+            through Bonnafide.
           </p>
         </div>
       </section>

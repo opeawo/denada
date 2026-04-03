@@ -4,7 +4,7 @@ import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export function HeroSection() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hi Denada, I'd like to enquire about a property"
+    "Hi Bonnafide, I'd like to enquire about a property"
   )}`;
 
   return (

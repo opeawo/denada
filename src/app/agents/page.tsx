@@ -24,7 +24,7 @@ const benefits = [
   {
     icon: BadgeCheck,
     title: "Verified Badge",
-    description: "Stand out with a Denada-verified agent badge. Buyers trust verified agents.",
+    description: "Stand out with a Bonnafide-verified agent badge. Buyers trust verified agents.",
   },
   {
     icon: Users,
@@ -61,7 +61,7 @@ export default function AgentsPage() {
   });
 
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hi Denada, I'm a real estate agent and I'd like to join your platform."
+    "Hi Bonnafide, I'm a real estate agent and I'd like to join your platform."
   )}`;
 
   return (
@@ -76,7 +76,7 @@ export default function AgentsPage() {
             </h1>
             <p className="mt-4 text-lg text-white/80">
               For verified real estate agents and developers in Nigeria. Join
-              Denada&apos;s trusted agent network.
+              Bonnafide&apos;s trusted agent network.
             </p>
           </div>
         </div>
@@ -86,7 +86,7 @@ export default function AgentsPage() {
       <section className="py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
-            title="Why Join Denada as an Agent?"
+            title="Why Join Bonnafide as an Agent?"
             subtitle="Tools, trust, and a network of premium buyers."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -118,7 +118,7 @@ export default function AgentsPage() {
             Agent on Record Protection
           </h2>
           <p className="mt-4 text-white/80 leading-relaxed">
-            Every property listed through a Denada-verified agent comes with a
+            Every property listed through a Bonnafide-verified agent comes with a
             10-year omo-onile protection guarantee. We partner with top Nigerian
             law firms and trust companies to ensure land grabbing never affects
             your clients. Your clients pay an annual fee, and you earn a

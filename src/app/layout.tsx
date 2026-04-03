@@ -9,8 +9,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Denada | Premium Real Estate Investment in Nigeria",
-    template: "%s | Denada",
+    default: "Bonnafide | Premium Real Estate Investment in Nigeria",
+    template: "%s | Bonnafide",
   },
   description:
     "Invest in Nigeria's premium real estate. Buy outright, pay in installments, or own fractions of luxury properties in Lagos & Abuja.",
