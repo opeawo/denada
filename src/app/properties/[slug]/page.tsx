@@ -58,7 +58,7 @@ export default function PropertyDetailPage({ params }: Props) {
     <div className="pt-20 pb-24 md:pb-8">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1 py-4 text-sm text-muted-foreground">
+        <nav className="flex items-center gap-1 py-4 text-sm text-muted-foreground overflow-x-auto whitespace-nowrap">
           <Link href="/" className="hover:text-foreground">
             Nigeria
           </Link>
@@ -79,7 +79,7 @@ export default function PropertyDetailPage({ params }: Props) {
         {/* Two-column layout */}
         <div className="grid gap-8 lg:grid-cols-[1fr_380px]">
           {/* Left column */}
-          <div>
+          <div className="min-w-0">
             {/* Gallery */}
             <PropertyGallery images={property.images} title={property.title} />
 
@@ -125,6 +125,11 @@ export default function PropertyDetailPage({ params }: Props) {
                 <Building2 className="h-4 w-4 text-muted-foreground" />
                 {property.developer.name}
               </Link>
+            </div>
+
+            {/* Mobile purchase panel */}
+            <div className="mt-8 lg:hidden">
+              <PurchasePanel property={property} />
             </div>
 
             {/* Description */}
